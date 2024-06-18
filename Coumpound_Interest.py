@@ -13,13 +13,17 @@ interest=float(input("what interest?"))
 #T=float(input("Enter The Rate Of Interest : "))
 #R=float(input("Enter The Time Duration : "))
 positionVolume=float(input("how much $ per position")) #maximum opend position size is 100$ for example
+positionsperday=2
+automaticposinc=False #Automatic increase of the positions number
 if P>positionVolume:
-    mop=float(P/positionVolume)#maximum openable position number
     daycounter=1
     while(daycounter!=duration):
-       P+=compound_interest(positionVolume,1,interest)*mop #R=1 because we trade each position one time per day
-       if int(P/positionVolume)>int(mop):#to pervent to have like mop=20.63
-            mop=float(P/positionVolume)
+       if automaticposinc:
+            mop=int(P/positionVolume)#maximum openable position number
+            P+=compound_interest(positionVolume,1,interest)*mop #R=1 because we trade each position one time per day
+       else:
+            P+=compound_interest(positionVolume,1,interest)*positionsperday #R=1 because we trade each position one time per day
+            mop=positionsperday
        interestsMade=compound_interest(positionVolume,1,interest)
        print(f"Ballance:{P} ------PositionVolume:{positionVolume}---Positions:{mop}---Intersets Made:{interestsMade} per position ---totall interests made:{interestsMade*mop}")
        daycounter+=1

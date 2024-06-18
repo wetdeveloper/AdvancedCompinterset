@@ -7,9 +7,9 @@ print("") # leaves a space
 
 # Takes the user information
 principle = float(input("Enter starting principle (the amount you start with): "))        #takes the initial investment
-rate = float(input("Enter annual interest amount (as a percentage): "))                 #takes the annual interest rate as a percentage
-times = int(input("Enter the number of years the amount is invested:  "))               #takes the number years 
-number = int(input("Enter the number of times the interest is compounded per year: "))  #takes in the number of times the intest is compounded
+rate = float(input("Enter interest amount (as a percentage): "))                 #takes the annual interest rate as a percentage
+times = int(input("how many trades per a day?:  "))               #takes the number years 
+number = int(input("how many days?: "))  #takes in the number of times the intest is compounded
 print("")
 
 # Calculates compound interest & print out the final interest
