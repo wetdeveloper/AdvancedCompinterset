@@ -3,15 +3,13 @@
 def compound_interest(P, R, T):
     Amount = P * (pow((1 + R / 100), T))  
     CI=Amount-P
-    # Printing & Returning The Simple Interest	
-   # print('The Compound Interest Is', CI,'Currencies')
+ 
     return CI
-# Recieving The Data From The User
+
 P=float(input("Enter The Principle : "))
 duration=int(input("how many days?"))
 interest=float(input("what interest?"))
-#T=float(input("Enter The Rate Of Interest : "))
-#R=float(input("Enter The Time Duration : "))
+
 positionVolume=float(input("how much $ per position")) #maximum opend position size is 100$ for example
 positionsperday=2
 automaticposinc=False #Automatic increase of the positions number
